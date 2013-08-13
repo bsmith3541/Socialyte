@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "UserDetailsViewController.h"
+#import "FICManager.h"
+#import <Parse/Parse.h>
 
 @interface LoginViewController ()
 
@@ -37,10 +39,11 @@
     self.title = @"Facebook Profile";
     
     // Check if user is cached and linked to Facebook, if so, bypass login
-    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        //[self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:NO];
-        //[self performSegueWithIdentifier:@"userDetails" sender:self];
-    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - Login methods
@@ -51,74 +54,21 @@
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location", @"user_events"];
     
     // Login PFUser using facebook
-    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        //[_activityIndicator stopAnimating]; // Hide loading indicator
-        
-        if (!user) {
-            if (!error) {
-                NSLog(@"Uh oh. The user cancelled the Facebook login.");
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:@"Uh oh. The user cancelled the Facebook login." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
-                [alert show];
-            } else {
-                NSLog(@"Uh oh. An error occurred: %@", error);
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:[error description] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
-                [alert show];
-            }
-        } else if (user.isNew) {
-            NSLog(@"User with facebook signed up and logged in!");
-           // [self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
-            //[self performSegueWithIdentifier:@"userDetails" sender:self];
-        } else {
-            NSLog(@"User with facebook logged in!");
-            [self requestEvents];
-        }
+    [FICManager openSessionWithReadPermission:permissionsArray successHandler:^{
+        NSLog(@"Successfully logged in");
+        [self requestEvents];
+    } failureHandler:^{
+        NSLog(@"Login failed");
     }];
-    
     [_activityIndicator startAnimating]; // Show loading indicator until login is finished
 }
 
 -(void)requestEvents
 {
-
-    FBRequest *request = [FBRequest requestForMe];
-    
-    
     // Send request to Facebook
     NSLog(@"sending request...");
-    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        if (!error) {
-            // result is a dictionary with the user's Facebook data
-            NSDictionary *userData = (NSDictionary *)result;
-            NSLog(@"userData: %@", userData);
-            NSLog(@"FQL Query for Events...");
-            
-            // Query to fetch events the user has been invited to
-            NSString *query =
-            @"SELECT uid, eid, rsvp_status, start_time FROM event_member WHERE uid = me()";
-//            @"SELECT uid, eid, rsvp_status, name, start_time, end_time, location, venue FROM event_member WHERE uid = me()";
-            
-            // Set up the query parameter
-            NSDictionary *queryParam = @{ @"q": query };
-            
-            // Make the API request that uses FQL
-            [FBRequestConnection startWithGraphPath:@"/fql"
-                                         parameters:queryParam
-                                         HTTPMethod:@"GET"
-                                  completionHandler:^(FBRequestConnection *connection,
-                                                      id result,
-                                                      NSError *error) {
-                                      if (error) {
-                                          NSLog(@"Error: %@", [error localizedDescription]);
-                                      } else {
-                                          NSLog(@"FQL Result: %@", result[@"data"]);
-                                          NSLog(@"The result's class is %@", [result[@"data"] className]);
-                                          [self handleEvents:result[@"data"]];
-                                      }
-                                  }];
-            // [self performSegueWithIdentifier:@"userDetails" sender:self];
-            
-            // [self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
-        }
+    [FICManager getEventsWithCompletionHandler:^(id result, NSError *error) {
+        [self handleEvents:result];
     }];
 }
 
