@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		986788F2177B7C9B00D94DBD /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986788F1177B7C9B00D94DBD /* InitialViewController.m */; };
+		986788FB177E126700D94DBD /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986788FA177E126600D94DBD /* MapViewController.m */; };
+		986788FE1780B66300D94DBD /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986788FD1780B66200D94DBD /* AboutViewController.m */; };
+		986789001780B80100D94DBD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986788FF1780B80100D94DBD /* MapKit.framework */; };
+		986DA0E31780CA4500892687 /* New Haven.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 986DA0E21780CA4500892687 /* New Haven.gpx */; };
+		986DA0E61780CB7700892687 /* Yale.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 986DA0E41780CB7700892687 /* Yale.gpx */; };
+		986DA0E71780CB7700892687 /* McLellan.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 986DA0E51780CB7700892687 /* McLellan.gpx */; };
+		986DA0EA1780D90400892687 /* GeoPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 986DA0E91780D90400892687 /* GeoPointAnnotation.m */; };
+		98C699B41776CC73007663AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699B31776CC73007663AE /* UIKit.framework */; };
+		98C699B61776CC73007663AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699B51776CC73007663AE /* Foundation.framework */; };
+		98C699B81776CC73007663AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699B71776CC73007663AE /* CoreGraphics.framework */; };
+		98C699BE1776CC73007663AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98C699BC1776CC73007663AE /* InfoPlist.strings */; };
+		98C699C01776CC73007663AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C699BF1776CC73007663AE /* main.m */; };
+		98C699C41776CC73007663AE /* SocialyteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C699C31776CC73007663AE /* SocialyteAppDelegate.m */; };
+		98C699C61776CC73007663AE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 98C699C51776CC73007663AE /* Default.png */; };
+		98C699C81776CC73007663AE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98C699C71776CC73007663AE /* Default@2x.png */; };
+		98C699CA1776CC73007663AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 98C699C91776CC73007663AE /* Default-568h@2x.png */; };
+		98C699CD1776CC73007663AE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98C699CB1776CC73007663AE /* MainStoryboard.storyboard */; };
+		98C699D01776CC73007663AE /* SocialyteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C699CF1776CC73007663AE /* SocialyteViewController.m */; };
+		98C699D71776CF04007663AE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699D61776CF04007663AE /* FacebookSDK.framework */; };
+		98C699D91776CF24007663AE /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 98C699D81776CF24007663AE /* FacebookSDKResources.bundle */; };
+		98C699DF1776CF5A007663AE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699DA1776CF59007663AE /* Accounts.framework */; };
+		98C699E01776CF5A007663AE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699DB1776CF59007663AE /* AdSupport.framework */; };
+		98C699E11776CF5A007663AE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699DC1776CF5A007663AE /* libsqlite3.dylib */; };
+		98C699E21776CF5A007663AE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699DD1776CF5A007663AE /* Security.framework */; };
+		98C699E31776CF5A007663AE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699DE1776CF5A007663AE /* Social.framework */; };
+		98C699E51776D082007663AE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699E41776D082007663AE /* Parse.framework */; };
+		98C699ED1776D0BD007663AE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699E61776D0BD007663AE /* AudioToolbox.framework */; };
+		98C699EE1776D0BD007663AE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699E71776D0BD007663AE /* CFNetwork.framework */; };
+		98C699EF1776D0BD007663AE /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699E81776D0BD007663AE /* libz.1.1.3.dylib */; };
+		98C699F01776D0BD007663AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699E91776D0BD007663AE /* MobileCoreServices.framework */; };
+		98C699F11776D0BD007663AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699EA1776D0BD007663AE /* QuartzCore.framework */; };
+		98C699F21776D0BD007663AE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699EB1776D0BD007663AE /* StoreKit.framework */; };
+		98C699F31776D0BD007663AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699EC1776D0BD007663AE /* SystemConfiguration.framework */; };
+		98C699F61776D12C007663AE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C699F51776D12C007663AE /* LoginViewController.m */; };
+		98C699F81776D1F2007663AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C699F71776D1F2007663AE /* CoreLocation.framework */; };
+		98C699FB1776D2DA007663AE /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C699FA1776D2DA007663AE /* UserDetailsViewController.m */; };
+		98C69A0117793B8A007663AE /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C69A0017793B8A007663AE /* EventsTableViewController.m */; };
+		98C69A12177A26B8007663AE /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C69A0D177A26B8007663AE /* ECSlidingViewController.m */; };
+		98C69A14177A26B8007663AE /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C69A11177A26B8007663AE /* UIImage+ImageWithUIView.m */; };
+		98C69A24177A4F10007663AE /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C69A23177A4F10007663AE /* MenuViewController.m */; };
+		98D4082017875032004D21C2 /* MyNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D4081F17875032004D21C2 /* MyNavViewController.m */; };
+		98EA687C17836771000FD675 /* K21D.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 98EA687B17836771000FD675 /* K21D.gpx */; };
+		98EA687F1783EFEE000FD675 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EA687E1783EFEE000FD675 /* Event.m */; };
+		98EA68821783F006000FD675 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EA68811783F006000FD675 /* EventViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		986788F0177B7C9B00D94DBD /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		986788F1177B7C9B00D94DBD /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		986788F9177E126600D94DBD /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		986788FA177E126600D94DBD /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		986788FC1780B66200D94DBD /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		986788FD1780B66200D94DBD /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		986788FF1780B80100D94DBD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		986DA0E21780CA4500892687 /* New Haven.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "New Haven.gpx"; path = "../New Haven.gpx"; sourceTree = "<group>"; };
+		986DA0E41780CB7700892687 /* Yale.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Yale.gpx; sourceTree = "<group>"; };
+		986DA0E51780CB7700892687 /* McLellan.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = McLellan.gpx; sourceTree = "<group>"; };
+		986DA0E81780D90400892687 /* GeoPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoPointAnnotation.h; sourceTree = "<group>"; };
+		986DA0E91780D90400892687 /* GeoPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoPointAnnotation.m; sourceTree = "<group>"; };
+		98C699B01776CC73007663AE /* Socialyte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socialyte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C699B31776CC73007663AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		98C699B51776CC73007663AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		98C699B71776CC73007663AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		98C699BB1776CC73007663AE /* Socialyte-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Socialyte-Info.plist"; sourceTree = "<group>"; };
+		98C699BD1776CC73007663AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		98C699BF1776CC73007663AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98C699C11776CC73007663AE /* Socialyte-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Socialyte-Prefix.pch"; sourceTree = "<group>"; };
+		98C699C21776CC73007663AE /* SocialyteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialyteAppDelegate.h; sourceTree = "<group>"; };
+		98C699C31776CC73007663AE /* SocialyteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialyteAppDelegate.m; sourceTree = "<group>"; };
+		98C699C51776CC73007663AE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		98C699C71776CC73007663AE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		98C699C91776CC73007663AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		98C699CC1776CC73007663AE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		98C699CE1776CC73007663AE /* SocialyteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocialyteViewController.h; sourceTree = "<group>"; };
+		98C699CF1776CC73007663AE /* SocialyteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialyteViewController.m; sourceTree = "<group>"; };
+		98C699D61776CF04007663AE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../iOS/FacebookSDK/build/FacebookSDK.framework; sourceTree = "<group>"; };
+		98C699D81776CF24007663AE /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../iOS/FacebookSDK/build/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		98C699DA1776CF59007663AE /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		98C699DB1776CF59007663AE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		98C699DC1776CF5A007663AE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		98C699DD1776CF5A007663AE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		98C699DE1776CF5A007663AE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		98C699E41776D082007663AE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Downloads/Parse.framework; sourceTree = "<group>"; };
+		98C699E61776D0BD007663AE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		98C699E71776D0BD007663AE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		98C699E81776D0BD007663AE /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		98C699E91776D0BD007663AE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		98C699EA1776D0BD007663AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		98C699EB1776D0BD007663AE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		98C699EC1776D0BD007663AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		98C699F41776D12C007663AE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		98C699F51776D12C007663AE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		98C699F71776D1F2007663AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		98C699F91776D2DA007663AE /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		98C699FA1776D2DA007663AE /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		98C699FF17793B8A007663AE /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventsTableViewController.h; path = ../EventsTableViewController.h; sourceTree = "<group>"; };
+		98C69A0017793B8A007663AE /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventsTableViewController.m; path = ../EventsTableViewController.m; sourceTree = "<group>"; };
+		98C69A0C177A26B8007663AE /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		98C69A0D177A26B8007663AE /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		98C69A10177A26B8007663AE /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
+		98C69A11177A26B8007663AE /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
+		98C69A22177A4F10007663AE /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		98C69A23177A4F10007663AE /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		98D4081E17875032004D21C2 /* MyNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavViewController.h; sourceTree = "<group>"; };
+		98D4081F17875032004D21C2 /* MyNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavViewController.m; sourceTree = "<group>"; };
+		98EA687B17836771000FD675 /* K21D.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = K21D.gpx; sourceTree = "<group>"; };
+		98EA687D1783EFED000FD675 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		98EA687E1783EFEE000FD675 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		98EA68801783F006000FD675 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		98EA68811783F006000FD675 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98C699AD1776CC73007663AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986789001780B80100D94DBD /* MapKit.framework in Frameworks */,
+				98C699F81776D1F2007663AE /* CoreLocation.framework in Frameworks */,
+				98C699ED1776D0BD007663AE /* AudioToolbox.framework in Frameworks */,
+				98C699EE1776D0BD007663AE /* CFNetwork.framework in Frameworks */,
+				98C699EF1776D0BD007663AE /* libz.1.1.3.dylib in Frameworks */,
+				98C699F01776D0BD007663AE /* MobileCoreServices.framework in Frameworks */,
+				98C699F11776D0BD007663AE /* QuartzCore.framework in Frameworks */,
+				98C699F21776D0BD007663AE /* StoreKit.framework in Frameworks */,
+				98C699F31776D0BD007663AE /* SystemConfiguration.framework in Frameworks */,
+				98C699B81776CC73007663AE /* CoreGraphics.framework in Frameworks */,
+				98C699E21776CF5A007663AE /* Security.framework in Frameworks */,
+				98C699E31776CF5A007663AE /* Social.framework in Frameworks */,
+				98C699DF1776CF5A007663AE /* Accounts.framework in Frameworks */,
+				98C699E01776CF5A007663AE /* AdSupport.framework in Frameworks */,
+				98C699E11776CF5A007663AE /* libsqlite3.dylib in Frameworks */,
+				98C699B41776CC73007663AE /* UIKit.framework in Frameworks */,
+				98C699B61776CC73007663AE /* Foundation.framework in Frameworks */,
+				98C699D71776CF04007663AE /* FacebookSDK.framework in Frameworks */,
+				98C699E51776D082007663AE /* Parse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		98C699A71776CC73007663AE = {
+			isa = PBXGroup;
+			children = (
+				98EA687B17836771000FD675 /* K21D.gpx */,
+				986DA0E41780CB7700892687 /* Yale.gpx */,
+				986DA0E51780CB7700892687 /* McLellan.gpx */,
+				98C699B91776CC73007663AE /* Socialyte */,
+				98C699B21776CC73007663AE /* Frameworks */,
+				98C699B11776CC73007663AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98C699B11776CC73007663AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98C699B01776CC73007663AE /* Socialyte.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98C699B21776CC73007663AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				986788FF1780B80100D94DBD /* MapKit.framework */,
+				98C699F71776D1F2007663AE /* CoreLocation.framework */,
+				98C699E61776D0BD007663AE /* AudioToolbox.framework */,
+				98C699E71776D0BD007663AE /* CFNetwork.framework */,
+				98C699E81776D0BD007663AE /* libz.1.1.3.dylib */,
+				98C699E91776D0BD007663AE /* MobileCoreServices.framework */,
+				98C699EA1776D0BD007663AE /* QuartzCore.framework */,
+				98C699EB1776D0BD007663AE /* StoreKit.framework */,
+				98C699EC1776D0BD007663AE /* SystemConfiguration.framework */,
+				98C699E41776D082007663AE /* Parse.framework */,
+				98C699DA1776CF59007663AE /* Accounts.framework */,
+				98C699DB1776CF59007663AE /* AdSupport.framework */,
+				98C699DC1776CF5A007663AE /* libsqlite3.dylib */,
+				98C699DD1776CF5A007663AE /* Security.framework */,
+				98C699DE1776CF5A007663AE /* Social.framework */,
+				98C699D81776CF24007663AE /* FacebookSDKResources.bundle */,
+				98C699D61776CF04007663AE /* FacebookSDK.framework */,
+				98C699B31776CC73007663AE /* UIKit.framework */,
+				98C699B51776CC73007663AE /* Foundation.framework */,
+				98C699B71776CC73007663AE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98C699B91776CC73007663AE /* Socialyte */ = {
+			isa = PBXGroup;
+			children = (
+				98C69A0B177A2627007663AE /* ECSlidingViewController */,
+				98C699CB1776CC73007663AE /* MainStoryboard.storyboard */,
+				98EA687D1783EFED000FD675 /* Event.h */,
+				98EA687E1783EFEE000FD675 /* Event.m */,
+				98D4081E17875032004D21C2 /* MyNavViewController.h */,
+				98D4081F17875032004D21C2 /* MyNavViewController.m */,
+				98EA68801783F006000FD675 /* EventViewController.h */,
+				98EA68811783F006000FD675 /* EventViewController.m */,
+				98C699C21776CC73007663AE /* SocialyteAppDelegate.h */,
+				98C699C31776CC73007663AE /* SocialyteAppDelegate.m */,
+				986788FC1780B66200D94DBD /* AboutViewController.h */,
+				986788FD1780B66200D94DBD /* AboutViewController.m */,
+				986788F9177E126600D94DBD /* MapViewController.h */,
+				986788FA177E126600D94DBD /* MapViewController.m */,
+				986DA0E81780D90400892687 /* GeoPointAnnotation.h */,
+				986DA0E91780D90400892687 /* GeoPointAnnotation.m */,
+				986788F0177B7C9B00D94DBD /* InitialViewController.h */,
+				986788F1177B7C9B00D94DBD /* InitialViewController.m */,
+				98C69A22177A4F10007663AE /* MenuViewController.h */,
+				98C69A23177A4F10007663AE /* MenuViewController.m */,
+				98C699FF17793B8A007663AE /* EventsTableViewController.h */,
+				98C69A0017793B8A007663AE /* EventsTableViewController.m */,
+				98C699F41776D12C007663AE /* LoginViewController.h */,
+				98C699F51776D12C007663AE /* LoginViewController.m */,
+				98C699F91776D2DA007663AE /* UserDetailsViewController.h */,
+				98C699FA1776D2DA007663AE /* UserDetailsViewController.m */,
+				98C699CE1776CC73007663AE /* SocialyteViewController.h */,
+				98C699CF1776CC73007663AE /* SocialyteViewController.m */,
+				98C699BA1776CC73007663AE /* Supporting Files */,
+			);
+			path = Socialyte;
+			sourceTree = "<group>";
+		};
+		98C699BA1776CC73007663AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				986DA0E21780CA4500892687 /* New Haven.gpx */,
+				98C699BB1776CC73007663AE /* Socialyte-Info.plist */,
+				98C699BC1776CC73007663AE /* InfoPlist.strings */,
+				98C699BF1776CC73007663AE /* main.m */,
+				98C699C11776CC73007663AE /* Socialyte-Prefix.pch */,
+				98C699C51776CC73007663AE /* Default.png */,
+				98C699C71776CC73007663AE /* Default@2x.png */,
+				98C699C91776CC73007663AE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98C69A0B177A2627007663AE /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				98C69A0C177A26B8007663AE /* ECSlidingViewController.h */,
+				98C69A0D177A26B8007663AE /* ECSlidingViewController.m */,
+				98C69A10177A26B8007663AE /* UIImage+ImageWithUIView.h */,
+				98C69A11177A26B8007663AE /* UIImage+ImageWithUIView.m */,
+			);
+			name = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98C699AF1776CC73007663AE /* Socialyte */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98C699D31776CC73007663AE /* Build configuration list for PBXNativeTarget "Socialyte" */;
+			buildPhases = (
+				98C699AC1776CC73007663AE /* Sources */,
+				98C699AD1776CC73007663AE /* Frameworks */,
+				98C699AE1776CC73007663AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Socialyte;
+			productName = Socialyte;
+			productReference = 98C699B01776CC73007663AE /* Socialyte.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98C699A81776CC73007663AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Socialyte;
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 98C699AB1776CC73007663AE /* Build configuration list for PBXProject "Socialyte" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 98C699A71776CC73007663AE;
+			productRefGroup = 98C699B11776CC73007663AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98C699AF1776CC73007663AE /* Socialyte */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98C699AE1776CC73007663AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98C699BE1776CC73007663AE /* InfoPlist.strings in Resources */,
+				98C699C61776CC73007663AE /* Default.png in Resources */,
+				98C699C81776CC73007663AE /* Default@2x.png in Resources */,
+				98C699CA1776CC73007663AE /* Default-568h@2x.png in Resources */,
+				98C699CD1776CC73007663AE /* MainStoryboard.storyboard in Resources */,
+				98C699D91776CF24007663AE /* FacebookSDKResources.bundle in Resources */,
+				986DA0E31780CA4500892687 /* New Haven.gpx in Resources */,
+				986DA0E61780CB7700892687 /* Yale.gpx in Resources */,
+				986DA0E71780CB7700892687 /* McLellan.gpx in Resources */,
+				98EA687C17836771000FD675 /* K21D.gpx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98C699AC1776CC73007663AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98C699C01776CC73007663AE /* main.m in Sources */,
+				98C699C41776CC73007663AE /* SocialyteAppDelegate.m in Sources */,
+				98C699D01776CC73007663AE /* SocialyteViewController.m in Sources */,
+				98C699F61776D12C007663AE /* LoginViewController.m in Sources */,
+				98C699FB1776D2DA007663AE /* UserDetailsViewController.m in Sources */,
+				98C69A0117793B8A007663AE /* EventsTableViewController.m in Sources */,
+				98C69A12177A26B8007663AE /* ECSlidingViewController.m in Sources */,
+				98C69A14177A26B8007663AE /* UIImage+ImageWithUIView.m in Sources */,
+				98C69A24177A4F10007663AE /* MenuViewController.m in Sources */,
+				986788F2177B7C9B00D94DBD /* InitialViewController.m in Sources */,
+				986788FB177E126700D94DBD /* MapViewController.m in Sources */,
+				986788FE1780B66300D94DBD /* AboutViewController.m in Sources */,
+				986DA0EA1780D90400892687 /* GeoPointAnnotation.m in Sources */,
+				98EA687F1783EFEE000FD675 /* Event.m in Sources */,
+				98EA68821783F006000FD675 /* EventViewController.m in Sources */,
+				98D4082017875032004D21C2 /* MyNavViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		98C699BC1776CC73007663AE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98C699BD1776CC73007663AE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		98C699CB1776CC73007663AE /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98C699CC1776CC73007663AE /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		98C699D11776CC73007663AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		98C699D21776CC73007663AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98C699D41776CC73007663AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../iOS/FacebookSDK/build\"",
+					"\"$(SRCROOT)/../../Downloads\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Socialyte/Socialyte-Prefix.pch";
+				INFOPLIST_FILE = "Socialyte/Socialyte-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		98C699D51776CC73007663AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../iOS/FacebookSDK/build\"",
+					"\"$(SRCROOT)/../../Downloads\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Socialyte/Socialyte-Prefix.pch";
+				INFOPLIST_FILE = "Socialyte/Socialyte-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98C699AB1776CC73007663AE /* Build configuration list for PBXProject "Socialyte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98C699D11776CC73007663AE /* Debug */,
+				98C699D21776CC73007663AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98C699D31776CC73007663AE /* Build configuration list for PBXNativeTarget "Socialyte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98C699D41776CC73007663AE /* Debug */,
+				98C699D51776CC73007663AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98C699A81776CC73007663AE /* Project object */;
+}
