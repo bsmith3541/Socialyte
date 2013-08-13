@@ -12,27 +12,31 @@
 
 + (BOOL)isLoggedIn
 {
-    return ([FBSession activeSession].state == FBSessionStateCreatedTokenLoaded && [FBSession activeSession].isOpen);
+    return ([FBSession activeSession].state == FBSessionStateCreatedTokenLoaded);
 }
 
 + (void)checkLogin
 {
-    if (![FBSession activeSession].isOpen) [NSException raise:@"FICManager: User not logged in exception" format:@"There is no active session"];
+    NSLog(@"%u", [FBSession activeSession].state);
+    if ([FBSession activeSession].state != FBSessionStateCreatedTokenLoaded && [FBSession activeSession].state != 513) [NSException raise:@"FICManager: User not logged in exception" format:@"There is no active session"];
+
 }
 
 + (void)openSessionWithReadPermission:(NSArray *)readPermissions successHandler:(void(^)())successHandler failureHandler:(void(^)())failureHandler
 {
-    [FBSession openActiveSessionWithReadPermissions:readPermissions
-                                       allowLoginUI:YES
-                                  completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                                      if ([session isOpen]) {
-                                          [FBSession setActiveSession:session];
-                                          successHandler();
-                                      } else {
-                                          failureHandler();
-                                      }
-                                      if (error) NSLog(@"FICManager: %@", error.localizedDescription);
-                                  }];
+    if (![self isLoggedIn]) {
+        [FBSession openActiveSessionWithReadPermissions:readPermissions
+                                           allowLoginUI:YES
+                                      completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                          if ([session isOpen]) {
+    //                                          [FBSession setActiveSession:session];
+                                              successHandler();
+                                          } else {
+                                              failureHandler();
+                                          }
+                                          if (error) NSLog(@"FICManager: %@", error.localizedDescription);
+                                      }];
+    }
 }
 
 #define FQL_EVENTS_COMMAND @"SELECT uid, eid, rsvp_status, start_time FROM event_member WHERE uid = me()"

@@ -39,6 +39,9 @@
     self.title = @"Facebook Profile";
     
     // Check if user is cached and linked to Facebook, if so, bypass login
+    if ([FICManager isLoggedIn]) {
+        [self performSegueWithIdentifier:@"userLoggedInSegue" sender:self];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -57,6 +60,7 @@
     [FICManager openSessionWithReadPermission:permissionsArray successHandler:^{
         NSLog(@"Successfully logged in");
         [self requestEvents];
+        [self performSegueWithIdentifier:@"userLoggedInSegue" sender:self];
     } failureHandler:^{
         NSLog(@"Login failed");
     }];
@@ -69,7 +73,7 @@
     NSLog(@"sending request...");
     [FICManager getEventsWithCompletionHandler:^(id result, NSError *error) {
         NSLog(@"%@", result);
-        [self handleEvents:result];
+        [self handleEvents:[result objectForKey:@"data"]];
     }];
 }
 

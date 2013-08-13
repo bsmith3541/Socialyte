@@ -30,11 +30,7 @@
 
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
 //    self.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"eventsTableNav"];
-    if ([FICManager isLoggedIn]) {
-        self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-    } else {
-        self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginModal"];
-    }
+    self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
     self.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     
 //    eventsTableNavController = [eventsTableNavController initWithRootViewController:[[EventsTableViewController alloc] initWithStyle:UITableViewStylePlain]];

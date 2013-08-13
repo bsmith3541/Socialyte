@@ -51,7 +51,7 @@
 		98EA68821783F006000FD675 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EA68811783F006000FD675 /* EventViewController.m */; };
 		9B16096F17BAB63C00778D41 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16096E17BAB63C00778D41 /* FacebookSDK.framework */; };
 		9B16097117BAB6A700778D41 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16097017BAB6A700778D41 /* Parse.framework */; };
-		9B16097417BAB73000778D41 /* FICManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16097317BAB73000778D41 /* FICManager.m */; };
+		9B16097A17BAF4C000778D41 /* FICManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16097917BAF4C000778D41 /* FICManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,7 +118,7 @@
 		9B16096E17BAB63C00778D41 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		9B16097017BAB6A700778D41 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9B16097217BAB73000778D41 /* FICManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICManager.h; sourceTree = "<group>"; };
-		9B16097317BAB73000778D41 /* FICManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICManager.m; sourceTree = "<group>"; };
+		9B16097917BAF4C000778D41 /* FICManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				9B16097217BAB73000778D41 /* FICManager.h */,
-				9B16097317BAB73000778D41 /* FICManager.m */,
+				9B16097917BAF4C000778D41 /* FICManager.m */,
 				986788FF1780B80100D94DBD /* MapKit.framework */,
 				98C699F71776D1F2007663AE /* CoreLocation.framework */,
 				98C699E61776D0BD007663AE /* AudioToolbox.framework */,
@@ -363,7 +363,7 @@
 				98EA687F1783EFEE000FD675 /* Event.m in Sources */,
 				98EA68821783F006000FD675 /* EventViewController.m in Sources */,
 				98D4082017875032004D21C2 /* MyNavViewController.m in Sources */,
-				9B16097417BAB73000778D41 /* FICManager.m in Sources */,
+				9B16097A17BAF4C000778D41 /* FICManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
