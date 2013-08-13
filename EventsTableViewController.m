@@ -22,7 +22,7 @@
         // Custom the table
         
         // The className to query on
-        self.className = @"Event";
+        self.parseClassName = @"Event";
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"name";
@@ -147,8 +147,8 @@
 // all objects ordered by createdAt descending.
 - (PFQuery *)queryForTable {
     NSLog(@"Hello...9");
-    PFQuery *query = [PFQuery queryWithClassName:self.className];
-    NSLog(@"the className is %@", self.className);
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    NSLog(@"the className is %@", self.parseClassName);
     NSLog(@"the query: %@", query);
     
     // If no objects are loaded in memory, we look to the cache first to fill the table

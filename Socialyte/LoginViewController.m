@@ -68,6 +68,7 @@
     // Send request to Facebook
     NSLog(@"sending request...");
     [FICManager getEventsWithCompletionHandler:^(id result, NSError *error) {
+        NSLog(@"%@", result);
         [self handleEvents:result];
     }];
 }

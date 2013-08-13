@@ -8,6 +8,7 @@
 
 #import "InitialViewController.h"
 #import "EventsTableViewController.h"
+#import "FICManager.h"
 
 @interface InitialViewController ()
 
@@ -29,7 +30,11 @@
 
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
 //    self.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"eventsTableNav"];
-    self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    if ([FICManager isLoggedIn]) {
+        self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    } else {
+        self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginModal"];
+    }
     self.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     
 //    eventsTableNavController = [eventsTableNavController initWithRootViewController:[[EventsTableViewController alloc] initWithStyle:UITableViewStylePlain]];
