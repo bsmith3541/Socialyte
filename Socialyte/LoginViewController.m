@@ -56,7 +56,7 @@
     // Set permissions required from the facebook user account
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location", @"user_events"];
     
-    // Login PFUser using facebook
+    // Now log in user with FICManager
     [FICManager openSessionWithReadPermission:permissionsArray successHandler:^{
         NSLog(@"Successfully logged in");
         [self requestEvents];
