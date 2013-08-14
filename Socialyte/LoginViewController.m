@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UserDetailsViewController.h"
-#import "FICManager.h"
+#import "FICManager+handleEvents.h"
 #import <Parse/Parse.h>
 
 @interface LoginViewController ()
@@ -59,7 +59,7 @@
     // Now log in user with FICManager
     [FICManager openSessionWithReadPermission:permissionsArray successHandler:^{
         NSLog(@"Successfully logged in");
-        [self requestEvents];
+        [FICManager requestEvents];
         [self performSegueWithIdentifier:@"userLoggedInSegue" sender:self];
     } failureHandler:^{
         NSLog(@"Login failed");
@@ -67,60 +67,60 @@
     [_activityIndicator startAnimating]; // Show loading indicator until login is finished
 }
 
--(void)requestEvents
-{
-    // Send request to Facebook
-    NSLog(@"sending request...");
-    [FICManager getEventsWithCompletionHandler:^(id result, NSError *error) {
-        NSLog(@"%@", result);
-        [self handleEvents:[result objectForKey:@"data"]];
-    }];
-}
+//-(void)requestEvents
+//{
+//    // Send request to Facebook
+//    NSLog(@"sending request...");
+//    [FICManager getEventsWithCompletionHandler:^(id result, NSError *error) {
+//        NSLog(@"%@", result);
+//        [self handleEvents:[result objectForKey:@"data"]];
+//    }];
+//}
 
 // receives the result from the FQL query
 // extracts event data and adds the event to Parse db
--(void)handleEvents:(id)arr
-{
-    NSLog(@"Handling events...");
-    if([arr respondsToSelector:@selector(objectAtIndex:)]) {
-        for (FBGraphObject *obj in arr) {
-            NSLog(@"Requesting Event with ID: %@...", [obj objectForKey:@"eid"]);
-            FBRequest *eventsRequest = [FBRequest requestForGraphPath:
-                                        [NSString stringWithFormat:@"%@", obj[@"eid"]]];
-
-            [eventsRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                NSDictionary *eventData = (NSDictionary *)result;
-                NSLog(@"Event Data:%@", eventData);
-                // for now, only add public events to Parse db
-                if ([eventData[@"privacy"] isEqualToString:@"OPEN"]) {
-                    PFObject *obj = [PFObject objectWithClassName:@"Event" dictionary:eventData];
-                    [obj saveInBackgroundWithBlock:^(BOOL completion, NSError *error){
-                        if(completion) {
-                            if(!error) {
-                                NSLog(@"Event successfully saved to Parse");
-                                
-                                // if the event has lat, long data...
-                                // we don't need to conditionally check for both lat and long bc
-                                // if it has lat, it will also have long
-                                if(eventData[@"venue"][@"latitude"]) {
-                                    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:[eventData[@"venue"][@"latitude"] doubleValue] longitude:[eventData[@"venue"][@"longitude"] doubleValue]];
-                                    [obj setObject:geoPoint forKey:@"PFGeoPoint"];
-                                    [obj saveInBackground];
-                                    NSLog(@"saved event with geopoint");
-                                }
-                            } else {
-                                NSLog(@"There was an error uploaded the event to the Parse db");
-                            }
-                        }
-                    }];
-                } else {
-                    NSLog(@"We're only adding public events for right now");
-                }
-            }];
-        }
-    } else {
-        NSLog(@"Somehow you didn't get an array...not even any empty one...");
-    }
-}
+//-(void)handleEvents:(id)arr
+//{
+//    NSLog(@"Handling events...");
+//    if([arr respondsToSelector:@selector(objectAtIndex:)]) {
+//        for (FBGraphObject *obj in arr) {
+//            NSLog(@"Requesting Event with ID: %@...", [obj objectForKey:@"eid"]);
+//            FBRequest *eventsRequest = [FBRequest requestForGraphPath:
+//                                        [NSString stringWithFormat:@"%@", obj[@"eid"]]];
+//
+//            [eventsRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                NSDictionary *eventData = (NSDictionary *)result;
+//                NSLog(@"Event Data:%@", eventData);
+//                // for now, only add public events to Parse db
+//                if ([eventData[@"privacy"] isEqualToString:@"OPEN"]) {
+//                    PFObject *obj = [PFObject objectWithClassName:@"Event" dictionary:eventData];
+//                    [obj saveInBackgroundWithBlock:^(BOOL completion, NSError *error){
+//                        if(completion) {
+//                            if(!error) {
+//                                NSLog(@"Event successfully saved to Parse");
+//                                
+//                                // if the event has lat, long data...
+//                                // we don't need to conditionally check for both lat and long bc
+//                                // if it has lat, it will also have long
+//                                if(eventData[@"venue"][@"latitude"]) {
+//                                    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:[eventData[@"venue"][@"latitude"] doubleValue] longitude:[eventData[@"venue"][@"longitude"] doubleValue]];
+//                                    [obj setObject:geoPoint forKey:@"PFGeoPoint"];
+//                                    [obj saveInBackground];
+//                                    NSLog(@"saved event with geopoint");
+//                                }
+//                            } else {
+//                                NSLog(@"There was an error uploaded the event to the Parse db");
+//                            }
+//                        }
+//                    }];
+//                } else {
+//                    NSLog(@"We're only adding public events for right now");
+//                }
+//            }];
+//        }
+//    } else {
+//        NSLog(@"Somehow you didn't get an array...not even any empty one...");
+//    }
+//}
 
 @end

@@ -52,6 +52,7 @@
 		9B16096F17BAB63C00778D41 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16096E17BAB63C00778D41 /* FacebookSDK.framework */; };
 		9B16097117BAB6A700778D41 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16097017BAB6A700778D41 /* Parse.framework */; };
 		9B16097A17BAF4C000778D41 /* FICManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16097917BAF4C000778D41 /* FICManager.m */; };
+		9B16097D17BBEF1100778D41 /* FICManager+handleEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16097C17BBEF1100778D41 /* FICManager+handleEvents.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +63,7 @@
 		986788FC1780B66200D94DBD /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		986788FD1780B66200D94DBD /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		986788FF1780B80100D94DBD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		986DA0E21780CA4500892687 /* New Haven.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "New Haven.gpx"; path = "../New Haven.gpx"; sourceTree = "<group>"; };
+		986DA0E21780CA4500892687 /* New Haven.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "New Haven.gpx"; sourceTree = "<group>"; };
 		986DA0E41780CB7700892687 /* Yale.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Yale.gpx; sourceTree = "<group>"; };
 		986DA0E51780CB7700892687 /* McLellan.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = McLellan.gpx; sourceTree = "<group>"; };
 		986DA0E81780D90400892687 /* GeoPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoPointAnnotation.h; sourceTree = "<group>"; };
@@ -119,6 +120,8 @@
 		9B16097017BAB6A700778D41 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9B16097217BAB73000778D41 /* FICManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FICManager.h; sourceTree = "<group>"; };
 		9B16097917BAF4C000778D41 /* FICManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICManager.m; sourceTree = "<group>"; };
+		9B16097B17BBEF1100778D41 /* FICManager+handleEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FICManager+handleEvents.h"; sourceTree = "<group>"; };
+		9B16097C17BBEF1100778D41 /* FICManager+handleEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FICManager+handleEvents.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,9 +157,7 @@
 		98C699A71776CC73007663AE = {
 			isa = PBXGroup;
 			children = (
-				98EA687B17836771000FD675 /* K21D.gpx */,
-				986DA0E41780CB7700892687 /* Yale.gpx */,
-				986DA0E51780CB7700892687 /* McLellan.gpx */,
+				9B16098817BBF69700778D41 /* gpxFiles */,
 				98C699B91776CC73007663AE /* Socialyte */,
 				98C699B21776CC73007663AE /* Frameworks */,
 				98C699B11776CC73007663AE /* Products */,
@@ -174,8 +175,8 @@
 		98C699B21776CC73007663AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B16097217BAB73000778D41 /* FICManager.h */,
-				9B16097917BAF4C000778D41 /* FICManager.m */,
+				98C69A0B177A2627007663AE /* ECSlidingViewController */,
+				9B16097E17BBF60100778D41 /* FICManager */,
 				986788FF1780B80100D94DBD /* MapKit.framework */,
 				98C699F71776D1F2007663AE /* CoreLocation.framework */,
 				98C699E61776D0BD007663AE /* AudioToolbox.framework */,
@@ -202,30 +203,18 @@
 		98C699B91776CC73007663AE /* Socialyte */ = {
 			isa = PBXGroup;
 			children = (
-				98C699C21776CC73007663AE /* SocialyteAppDelegate.h */,
-				98C699C31776CC73007663AE /* SocialyteAppDelegate.m */,
-				98C69A0B177A2627007663AE /* ECSlidingViewController */,
-				98C699CB1776CC73007663AE /* MainStoryboard.storyboard */,
+				9B16098917BBF6AD00778D41 /* AppDelegate */,
 				9B16097517BAB95A00778D41 /* Classes */,
-				98D4081E17875032004D21C2 /* MyNavViewController.h */,
-				98D4081F17875032004D21C2 /* MyNavViewController.m */,
-				98EA68801783F006000FD675 /* EventViewController.h */,
-				98EA68811783F006000FD675 /* EventViewController.m */,
-				986788FC1780B66200D94DBD /* AboutViewController.h */,
-				986788FD1780B66200D94DBD /* AboutViewController.m */,
-				986788F9177E126600D94DBD /* MapViewController.h */,
-				986788FA177E126600D94DBD /* MapViewController.m */,
-				986788F0177B7C9B00D94DBD /* InitialViewController.h */,
-				986788F1177B7C9B00D94DBD /* InitialViewController.m */,
-				98C69A22177A4F10007663AE /* MenuViewController.h */,
-				98C69A23177A4F10007663AE /* MenuViewController.m */,
-				98C699FF17793B8A007663AE /* EventsTableViewController.h */,
-				98C69A0017793B8A007663AE /* EventsTableViewController.m */,
+				9B16097F17BBF62600778D41 /* MyNavVC */,
+				9B16098017BBF62D00778D41 /* EventVC */,
+				9B16098117BBF63700778D41 /* AboutVC */,
+				9B16098217BBF63F00778D41 /* MapVC */,
+				9B16098317BBF64B00778D41 /* InitialVC */,
+				9B16098417BBF65200778D41 /* MenuVC */,
+				9B16098517BBF65C00778D41 /* EventsTableVC */,
 				9B16097617BAB96600778D41 /* LoginVC */,
-				98C699F91776D2DA007663AE /* UserDetailsViewController.h */,
-				98C699FA1776D2DA007663AE /* UserDetailsViewController.m */,
-				98C699CE1776CC73007663AE /* SocialyteViewController.h */,
-				98C699CF1776CC73007663AE /* SocialyteViewController.m */,
+				9B16098617BBF66700778D41 /* UserDetailsVC */,
+				9B16098717BBF66F00778D41 /* SocialyteVC */,
 				98C699BA1776CC73007663AE /* Supporting Files */,
 			);
 			path = Socialyte;
@@ -234,7 +223,7 @@
 		98C699BA1776CC73007663AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				986DA0E21780CA4500892687 /* New Haven.gpx */,
+				98C699CB1776CC73007663AE /* MainStoryboard.storyboard */,
 				98C699BB1776CC73007663AE /* Socialyte-Info.plist */,
 				98C699BC1776CC73007663AE /* InfoPlist.strings */,
 				98C699BF1776CC73007663AE /* main.m */,
@@ -255,6 +244,7 @@
 				98C69A11177A26B8007663AE /* UIImage+ImageWithUIView.m */,
 			);
 			name = ECSlidingViewController;
+			path = Socialyte;
 			sourceTree = "<group>";
 		};
 		9B16097517BAB95A00778D41 /* Classes */ = {
@@ -275,6 +265,118 @@
 				98C699F51776D12C007663AE /* LoginViewController.m */,
 			);
 			name = LoginVC;
+			sourceTree = "<group>";
+		};
+		9B16097E17BBF60100778D41 /* FICManager */ = {
+			isa = PBXGroup;
+			children = (
+				9B16097217BAB73000778D41 /* FICManager.h */,
+				9B16097917BAF4C000778D41 /* FICManager.m */,
+				9B16097B17BBEF1100778D41 /* FICManager+handleEvents.h */,
+				9B16097C17BBEF1100778D41 /* FICManager+handleEvents.m */,
+			);
+			name = FICManager;
+			sourceTree = "<group>";
+		};
+		9B16097F17BBF62600778D41 /* MyNavVC */ = {
+			isa = PBXGroup;
+			children = (
+				98D4081E17875032004D21C2 /* MyNavViewController.h */,
+				98D4081F17875032004D21C2 /* MyNavViewController.m */,
+			);
+			name = MyNavVC;
+			sourceTree = "<group>";
+		};
+		9B16098017BBF62D00778D41 /* EventVC */ = {
+			isa = PBXGroup;
+			children = (
+				98EA68801783F006000FD675 /* EventViewController.h */,
+				98EA68811783F006000FD675 /* EventViewController.m */,
+			);
+			name = EventVC;
+			sourceTree = "<group>";
+		};
+		9B16098117BBF63700778D41 /* AboutVC */ = {
+			isa = PBXGroup;
+			children = (
+				986788FC1780B66200D94DBD /* AboutViewController.h */,
+				986788FD1780B66200D94DBD /* AboutViewController.m */,
+			);
+			name = AboutVC;
+			sourceTree = "<group>";
+		};
+		9B16098217BBF63F00778D41 /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				986788F9177E126600D94DBD /* MapViewController.h */,
+				986788FA177E126600D94DBD /* MapViewController.m */,
+			);
+			name = MapVC;
+			sourceTree = "<group>";
+		};
+		9B16098317BBF64B00778D41 /* InitialVC */ = {
+			isa = PBXGroup;
+			children = (
+				986788F0177B7C9B00D94DBD /* InitialViewController.h */,
+				986788F1177B7C9B00D94DBD /* InitialViewController.m */,
+			);
+			name = InitialVC;
+			sourceTree = "<group>";
+		};
+		9B16098417BBF65200778D41 /* MenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				98C69A22177A4F10007663AE /* MenuViewController.h */,
+				98C69A23177A4F10007663AE /* MenuViewController.m */,
+			);
+			name = MenuVC;
+			sourceTree = "<group>";
+		};
+		9B16098517BBF65C00778D41 /* EventsTableVC */ = {
+			isa = PBXGroup;
+			children = (
+				98C699FF17793B8A007663AE /* EventsTableViewController.h */,
+				98C69A0017793B8A007663AE /* EventsTableViewController.m */,
+			);
+			name = EventsTableVC;
+			sourceTree = "<group>";
+		};
+		9B16098617BBF66700778D41 /* UserDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				98C699F91776D2DA007663AE /* UserDetailsViewController.h */,
+				98C699FA1776D2DA007663AE /* UserDetailsViewController.m */,
+			);
+			name = UserDetailsVC;
+			sourceTree = "<group>";
+		};
+		9B16098717BBF66F00778D41 /* SocialyteVC */ = {
+			isa = PBXGroup;
+			children = (
+				98C699CE1776CC73007663AE /* SocialyteViewController.h */,
+				98C699CF1776CC73007663AE /* SocialyteViewController.m */,
+			);
+			name = SocialyteVC;
+			sourceTree = "<group>";
+		};
+		9B16098817BBF69700778D41 /* gpxFiles */ = {
+			isa = PBXGroup;
+			children = (
+				98EA687B17836771000FD675 /* K21D.gpx */,
+				986DA0E41780CB7700892687 /* Yale.gpx */,
+				986DA0E51780CB7700892687 /* McLellan.gpx */,
+				986DA0E21780CA4500892687 /* New Haven.gpx */,
+			);
+			name = gpxFiles;
+			sourceTree = "<group>";
+		};
+		9B16098917BBF6AD00778D41 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				98C699C21776CC73007663AE /* SocialyteAppDelegate.h */,
+				98C699C31776CC73007663AE /* SocialyteAppDelegate.m */,
+			);
+			name = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +466,7 @@
 				98EA68821783F006000FD675 /* EventViewController.m in Sources */,
 				98D4082017875032004D21C2 /* MyNavViewController.m in Sources */,
 				9B16097A17BAF4C000778D41 /* FICManager.m in Sources */,
+				9B16097D17BBEF1100778D41 /* FICManager+handleEvents.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,10 +554,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
 					"$(inherited)",
-					"\"$(SRCROOT)/../iOS/FacebookSDK/build\"",
-					"\"$(SRCROOT)/../../Downloads\"",
-					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Socialyte/Socialyte-Prefix.pch";
@@ -472,10 +573,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
 					"$(inherited)",
-					"\"$(SRCROOT)/../iOS/FacebookSDK/build\"",
-					"\"$(SRCROOT)/../../Downloads\"",
-					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Socialyte/Socialyte-Prefix.pch";
