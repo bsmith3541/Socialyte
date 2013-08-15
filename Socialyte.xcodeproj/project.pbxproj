@@ -55,6 +55,7 @@
 		9B16097117BAB6A700778D41 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16097017BAB6A700778D41 /* Parse.framework */; };
 		9B16097A17BAF4C000778D41 /* FICManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16097917BAF4C000778D41 /* FICManager.m */; };
 		9B16097D17BBEF1100778D41 /* FICManager+handleEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16097C17BBEF1100778D41 /* FICManager+handleEvents.m */; };
+		9B16098D17BD5B8500778D41 /* 17HH.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9B16098C17BD5B8500778D41 /* 17HH.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		9B16097917BAF4C000778D41 /* FICManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FICManager.m; sourceTree = "<group>"; };
 		9B16097B17BBEF1100778D41 /* FICManager+handleEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FICManager+handleEvents.h"; sourceTree = "<group>"; };
 		9B16097C17BBEF1100778D41 /* FICManager+handleEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FICManager+handleEvents.m"; sourceTree = "<group>"; };
+		9B16098C17BD5B8500778D41 /* 17HH.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 17HH.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +378,7 @@
 		9B16098817BBF69700778D41 /* gpxFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9B16098C17BD5B8500778D41 /* 17HH.gpx */,
 				98EA687B17836771000FD675 /* K21D.gpx */,
 				986DA0E41780CB7700892687 /* Yale.gpx */,
 				986DA0E51780CB7700892687 /* McLellan.gpx */,
@@ -453,6 +456,7 @@
 				986DA0E61780CB7700892687 /* Yale.gpx in Resources */,
 				986DA0E71780CB7700892687 /* McLellan.gpx in Resources */,
 				98EA687C17836771000FD675 /* K21D.gpx in Resources */,
+				9B16098D17BD5B8500778D41 /* 17HH.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,8 +571,8 @@
 		98C699D41776CC73007663AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hengchu Zhang (H9KJL79Q6B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hengchu Zhang (H9KJL79Q6B)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)",
 					"$(inherited)",
@@ -577,8 +581,8 @@
 				GCC_PREFIX_HEADER = "Socialyte/Socialyte-Prefix.pch";
 				INFOPLIST_FILE = "Socialyte/Socialyte-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "A935435C-CB9F-4138-A6A1-CDE1EB10A8BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A935435C-CB9F-4138-A6A1-CDE1EB10A8BB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -586,7 +590,7 @@
 		98C699D51776CC73007663AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hengchu Zhang (H9KJL79Q6B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brandon Smith (4ET9LZ3HKY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)",
@@ -596,7 +600,7 @@
 				GCC_PREFIX_HEADER = "Socialyte/Socialyte-Prefix.pch";
 				INFOPLIST_FILE = "Socialyte/Socialyte-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "A935435C-CB9F-4138-A6A1-CDE1EB10A8BB";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
