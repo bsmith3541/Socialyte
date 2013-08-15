@@ -27,8 +27,6 @@
         PFGeoPoint *geoPoint = self.object[@"PFGeoPoint"];
         [self setGeoPoint:geoPoint];
         CLLocationCoordinate2D center = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
-        MKCircle *fence = [MKCircle circleWithCenterCoordinate:center radius:10.0];
-        self.trueFence = fence;
     }
     return self;
 }

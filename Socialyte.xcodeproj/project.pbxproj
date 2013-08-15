@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		982B48B817BC3A36005AA8E0 /* EventGeoPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 982B48B717BC3A36005AA8E0 /* EventGeoPoint.m */; };
+		982B48BD17BC3FEB005AA8E0 /* EventRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 982B48BC17BC3FEB005AA8E0 /* EventRegion.m */; };
 		986788F2177B7C9B00D94DBD /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986788F1177B7C9B00D94DBD /* InitialViewController.m */; };
 		986788FB177E126700D94DBD /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986788FA177E126600D94DBD /* MapViewController.m */; };
 		986788FE1780B66300D94DBD /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986788FD1780B66200D94DBD /* AboutViewController.m */; };
@@ -56,6 +58,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		982B48B617BC3A36005AA8E0 /* EventGeoPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventGeoPoint.h; path = ../EventGeoPoint.h; sourceTree = "<group>"; };
+		982B48B717BC3A36005AA8E0 /* EventGeoPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventGeoPoint.m; path = ../EventGeoPoint.m; sourceTree = "<group>"; };
+		982B48B917BC3C2E005AA8E0 /* NSObject+PropertyList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+PropertyList.h"; path = "Socialyte/NSObject+PropertyList.h"; sourceTree = "<group>"; };
+		982B48BA17BC3C2E005AA8E0 /* NSObject+PropertyList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSObject+PropertyList.m"; path = "Socialyte/NSObject+PropertyList.m"; sourceTree = "<group>"; };
+		982B48BB17BC3FEB005AA8E0 /* EventRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventRegion.h; sourceTree = "<group>"; };
+		982B48BC17BC3FEB005AA8E0 /* EventRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventRegion.m; sourceTree = "<group>"; };
 		986788F0177B7C9B00D94DBD /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		986788F1177B7C9B00D94DBD /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		986788F9177E126600D94DBD /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -175,6 +183,8 @@
 		98C699B21776CC73007663AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				982B48B917BC3C2E005AA8E0 /* NSObject+PropertyList.h */,
+				982B48BA17BC3C2E005AA8E0 /* NSObject+PropertyList.m */,
 				98C69A0B177A2627007663AE /* ECSlidingViewController */,
 				9B16097E17BBF60100778D41 /* FICManager */,
 				986788FF1780B80100D94DBD /* MapKit.framework */,
@@ -250,6 +260,8 @@
 		9B16097517BAB95A00778D41 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				982B48B617BC3A36005AA8E0 /* EventGeoPoint.h */,
+				982B48B717BC3A36005AA8E0 /* EventGeoPoint.m */,
 				986DA0E81780D90400892687 /* GeoPointAnnotation.h */,
 				986DA0E91780D90400892687 /* GeoPointAnnotation.m */,
 				98EA687D1783EFED000FD675 /* Event.h */,
@@ -310,6 +322,8 @@
 			children = (
 				986788F9177E126600D94DBD /* MapViewController.h */,
 				986788FA177E126600D94DBD /* MapViewController.m */,
+				982B48BB17BC3FEB005AA8E0 /* EventRegion.h */,
+				982B48BC17BC3FEB005AA8E0 /* EventRegion.m */,
 			);
 			name = MapVC;
 			sourceTree = "<group>";
@@ -467,6 +481,8 @@
 				98D4082017875032004D21C2 /* MyNavViewController.m in Sources */,
 				9B16097A17BAF4C000778D41 /* FICManager.m in Sources */,
 				9B16097D17BBEF1100778D41 /* FICManager+handleEvents.m in Sources */,
+				982B48B817BC3A36005AA8E0 /* EventGeoPoint.m in Sources */,
+				982B48BD17BC3FEB005AA8E0 /* EventRegion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
