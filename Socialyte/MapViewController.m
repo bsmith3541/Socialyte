@@ -209,6 +209,15 @@
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
+    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+        localNotification.alertBody = @"You entered the region!!";
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
+    
     /* 1. update currentRegion...
        2. active GPS
        3. check to see if the region contains
@@ -230,6 +239,15 @@
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+        localNotification.alertBody = @"You exited the region!!";
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
 }
 
 -(void)locationManager:(CLLocationManager *)manager
