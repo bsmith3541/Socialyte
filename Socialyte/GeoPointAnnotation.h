@@ -18,6 +18,6 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSString *subtitle;
-@property (nonatomic, weak) MKCircle *trueFence;
+@property (nonatomic, strong) CLRegion *trueFence;
 @property (nonatomic, strong) CLRegion *region;
 @end

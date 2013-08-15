@@ -15,6 +15,7 @@
 
 @interface MapViewController ()
 @property(nonatomic, weak)GeoPointAnnotation *currentGeoPoint;
+@property(nonatomic, weak)NSArray *eventsArray;
 @end
 
 @implementation MapViewController
@@ -88,13 +89,15 @@
         //query.limit = 10;
         // Final list of objects
         NSArray *events = [query findObjects];
-        for (PFGeoPoint *point in events) {
+        self.eventsArray = events;
+        for (PFObject *point in events) {
             //EventGeoPoint *eventPoint = [EventGeoPoint createEventGeoPointFromPFGeoPoint:point];
             //CLLocationCoordinate2D center = CLLocationCoordinate2DMake(eventPoint.latitude, eventPoint.longitude);
             //eventPoint.trueFence= [MKCircle circleWithCenterCoordinate:center radius:10.0];
             //NSLog(@"There are %d event(s) near you!", [events count]);
             //NSLog(@"Event Name: %@", [eventPoint valueForKey:@"name"]);
-            [self plotGeoPoint:point];
+                NSLog(@"Lat: %f, Long: %f", ((PFGeoPoint *)point[@"PFGeoPoint"]).latitude, ((PFGeoPoint *)point[@"PFGeoPoint"]).longitude);
+                [self plotGeoPoint:point];
             //[self createGeofence:point];
         }
         NSLog(@"There are %d event(s) near you!", [events count]);
@@ -113,15 +116,19 @@
     
 }
 
-- (void)plotGeoPoint:(PFGeoPoint *)event
+- (void)plotGeoPoint:(PFObject *)event
 {
     // create GeoPointAnnotation
+    NSLog(@"Event: %@", event);
     GeoPointAnnotation *annotation = [[GeoPointAnnotation alloc] initWithObject:(PFObject *)event];
+//    NSLog(@"Annotation: %@", annotation);
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(((PFGeoPoint *)event[@"PFGeoPoint"]).latitude, ((PFGeoPoint *)event[@"PFGeoPoint"]).longitude);
+    annotation.trueFence = [[CLRegion alloc] initCircularRegionWithCenter:center radius:30.0 identifier:@"TruFence"];
     [self.mapView addAnnotation:annotation];
     
     // create region from GeoPoint
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(event.latitude, event.longitude);
-    EventRegion *point = (EventRegion *)[[CLRegion alloc] initCircularRegionWithCenter:center radius:10.0 identifier:[[NSUUID UUID] UUIDString]];
+     EventRegion *point = [[EventRegion alloc] initCircularRegionWithCenter:center radius:10.0 identifier:[[NSUUID UUID] UUIDString]];
+    
     
     // associate region with GeoPoint
     point.event = annotation;
@@ -210,10 +217,15 @@
      
        there's gotta be a better way to do this 
      */
-    self.currentGeoPoint = region;
-    NSLog(@"Firing up the GPS!");
-    [self.locationManager startUpdatingLocation];
-
+    for(PFObject *object in self.eventsArray) {
+        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(((PFGeoPoint *)object[@"PFGeoPoint"]).latitude, ((PFGeoPoint *)object[@"PFGeoPoint"]).longitude);
+        if(center.latitude == region.center.latitude && center.longitude == region.center.longitude) {
+            self.currentGeoPoint = object[@"PFGeoPoint"];
+            NSLog(@"Firing up the GPS!");
+            [self.locationManager startUpdatingLocation];
+        }
+    }
+//    self.currentGeoPoint = ((EventRegion *)region).event;    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
@@ -225,15 +237,16 @@
           fromLocation:(CLLocation *)oldLocation
 {
     CLLocationCoordinate2D currLoc =  newLocation.coordinate;
-//    if([self.currentRegion containsCoordinate:currLoc]) {
-//        // need to find a way to display the event title
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Check-in"
-//                                                        message:[NSString stringWithFormat:@"Do you want to check into this event?"]
-//                                                       delegate:self
-//                                              cancelButtonTitle:@"No"
-//                                              otherButtonTitles:@"Yes!", nil];
-//         [alert show];
-//    }
+    if([self.currentGeoPoint.trueFence containsCoordinate:currLoc]) {
+        //CLRegion trueRegion = [CLRegion alloc] initCircularRegionWithCenter:<#(CLLocationCoordinate2D)#> radius:<#(CLLocationDistance)#> identifier:<#(NSString *)#>
+        // need to find a way to display the event title
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Check-in"
+                                                        message:[NSString stringWithFormat:@"Do you want to check into this event?"]
+                                                       delegate:self
+                                              cancelButtonTitle:@"No"
+                                              otherButtonTitles:@"Yes!", nil];
+         [alert show];
+    }
     NSLog(@"%f  %f ", currLoc.latitude, currLoc.longitude);
     [self.locationManager stopUpdatingLocation];
 }
