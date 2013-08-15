@@ -15,7 +15,7 @@
 
 @interface MapViewController ()
 @property(nonatomic, weak)GeoPointAnnotation *currentGeoPoint;
-@property(nonatomic, weak)NSArray *eventsArray;
+@property(nonatomic, strong)NSArray *eventsArray;
 @end
 
 @implementation MapViewController
@@ -217,12 +217,9 @@
      
        there's gotta be a better way to do this 
      */
-    NSLog(@"HELLO");
     for(PFObject *object in self.eventsArray) {
         CLLocationCoordinate2D center = CLLocationCoordinate2DMake(((PFGeoPoint *)object[@"PFGeoPoint"]).latitude, ((PFGeoPoint *)object[@"PFGeoPoint"]).longitude);
-        NSLog(@"%f vs. %f, %f vs. %f",center.latitude, region.center.latitude, center.longitude, region.center.longitude);
         if(center.latitude == region.center.latitude && center.longitude == region.center.longitude) {
-            NSLog(@"FOUND A MATCH");
             self.currentGeoPoint = object[@"PFGeoPoint"];
             NSLog(@"Firing up the GPS!");
             [self.locationManager startUpdatingLocation];
