@@ -219,6 +219,7 @@
      */
     for(PFObject *object in self.eventsArray) {
         CLLocationCoordinate2D center = CLLocationCoordinate2DMake(((PFGeoPoint *)object[@"PFGeoPoint"]).latitude, ((PFGeoPoint *)object[@"PFGeoPoint"]).longitude);
+        NSLog(@"%f vs. %f, %f vs. %f",center.latitude, region.center.latitude, center.longitude, region.center.longitude);
         if(center.latitude == region.center.latitude && center.longitude == region.center.longitude) {
             self.currentGeoPoint = object[@"PFGeoPoint"];
             NSLog(@"Firing up the GPS!");
