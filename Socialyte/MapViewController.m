@@ -14,7 +14,7 @@
 #import "EventRegion.h"
 
 @interface MapViewController ()
-@property(nonatomic, weak)GeoPointAnnotation *currentGeoPoint;
+@property(nonatomic, strong)GeoPointAnnotation *currentGeoPoint;
 @property(nonatomic, strong)NSArray *eventsArray;
 @end
 
@@ -236,6 +236,7 @@
    didUpdateToLocation:(CLLocation *)newLocation
           fromLocation:(CLLocation *)oldLocation
 {
+    NSLog(@"Updated Location!");
     CLLocationCoordinate2D currLoc =  newLocation.coordinate;
     if([self.currentGeoPoint.trueFence containsCoordinate:currLoc]) {
         //CLRegion trueRegion = [CLRegion alloc] initCircularRegionWithCenter:<#(CLLocationCoordinate2D)#> radius:<#(CLLocationDistance)#> identifier:<#(NSString *)#>
