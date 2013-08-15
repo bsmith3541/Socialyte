@@ -237,6 +237,12 @@
           fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"Updated Location!");
+    UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"Updated Location!"
+                                                    message:[NSString stringWithFormat:@"Well what do ya know?"]
+                                                   delegate:self
+                                          cancelButtonTitle:@"No"
+                                          otherButtonTitles:@"Yes!", nil];
+    [alert2 show];
     CLLocationCoordinate2D currLoc =  newLocation.coordinate;
     if([self.currentGeoPoint.trueFence containsCoordinate:currLoc]) {
         //CLRegion trueRegion = [CLRegion alloc] initCircularRegionWithCenter:<#(CLLocationCoordinate2D)#> radius:<#(CLLocationDistance)#> identifier:<#(NSString *)#>
