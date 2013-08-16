@@ -229,6 +229,14 @@
     for(PFObject *object in self.eventsArray) {
         CLLocationCoordinate2D center = CLLocationCoordinate2DMake(((PFGeoPoint *)object[@"PFGeoPoint"]).latitude, ((PFGeoPoint *)object[@"PFGeoPoint"]).longitude);
         if(center.latitude == region.center.latitude && center.longitude == region.center.longitude) {
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start GPS"
+                                                            message:[NSString stringWithFormat:@"Found a match!"]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil,nil];
+            [alert show];
+            
             self.currentGeoPoint = object[@"PFGeoPoint"];
             NSLog(@"Firing up the GPS!");
             [self.locationManager startUpdatingLocation];
@@ -255,12 +263,14 @@
           fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"Updated Location!");
-    UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"Updated Location!"
-                                                    message:[NSString stringWithFormat:@"Well what do ya know?"]
-                                                   delegate:self
-                                          cancelButtonTitle:@"No"
-                                          otherButtonTitles:@"Yes!", nil];
-    [alert2 show];
+    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+        localNotification.alertBody = [NSString stringWithFormat:@"%@", newLocation];
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
     CLLocationCoordinate2D currLoc =  newLocation.coordinate;
     if([self.currentGeoPoint.trueFence containsCoordinate:currLoc]) {
         //CLRegion trueRegion = [CLRegion alloc] initCircularRegionWithCenter:<#(CLLocationCoordinate2D)#> radius:<#(CLLocationDistance)#> identifier:<#(NSString *)#>
