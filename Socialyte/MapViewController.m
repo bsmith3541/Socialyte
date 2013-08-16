@@ -127,7 +127,7 @@
     [self.mapView addAnnotation:annotation];
     
     // create region from GeoPoint
-     EventRegion *point = [[EventRegion alloc] initCircularRegionWithCenter:center radius:10.0 identifier:[[NSUUID UUID] UUIDString]];
+     EventRegion *point = [[EventRegion alloc] initCircularRegionWithCenter:center radius:1.0 identifier:[[NSUUID UUID] UUIDString]];
     
     
     // associate region with GeoPoint
@@ -236,7 +236,7 @@
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil,nil];
             [alert show];
-            
+                    
             self.currentGeoPoint = object[@"PFGeoPoint"];
             NSLog(@"Firing up the GPS!");
             [self.locationManager startUpdatingLocation];
@@ -266,7 +266,7 @@
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
         UILocalNotification* localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
-        localNotification.alertBody = [NSString stringWithFormat:@"%@", newLocation];
+        localNotification.alertBody = [NSString stringWithFormat:@"Updated to: %@", newLocation];
         localNotification.soundName = UILocalNotificationDefaultSoundName;
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
@@ -275,12 +275,23 @@
     if([self.currentGeoPoint.trueFence containsCoordinate:currLoc]) {
         //CLRegion trueRegion = [CLRegion alloc] initCircularRegionWithCenter:<#(CLLocationCoordinate2D)#> radius:<#(CLLocationDistance)#> identifier:<#(NSString *)#>
         // need to find a way to display the event title
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Check-in"
-                                                        message:[NSString stringWithFormat:@"Do you want to check into this event?"]
-                                                       delegate:self
-                                              cancelButtonTitle:@"No"
-                                              otherButtonTitles:@"Yes!", nil];
-         [alert show];
+
+        
+        if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+            UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+            localNotification.alertBody = [NSString stringWithFormat:@"You were checked into %@", self.currentGeoPoint];
+            localNotification.soundName = UILocalNotificationDefaultSoundName;
+            localNotification.timeZone = [NSTimeZone defaultTimeZone];
+            [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Check-in"
+                                                            message:[NSString stringWithFormat:@"Do you want to check into this event?"]
+                                                            delegate:self
+                                                    cancelButtonTitle:@"No"
+                                                    otherButtonTitles:@"Yes!", nil];
+                     [alert show];
+        }
     }
     NSLog(@"%f  %f ", currLoc.latitude, currLoc.longitude);
     [self.locationManager stopUpdatingLocation];
